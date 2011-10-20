@@ -1,0 +1,41 @@
+let mapleader=","
+
+:se ai
+:se expandtab
+:se ts=2
+:se sw=2
+
+:se pastetoggle=<F11>
+
+:colorscheme garry
+
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+
+:nnoremap <C-l> gt
+:nnoremap <C-h> gT
+
+
+:command Rst :!rst2html.py % > /tmp/rst-preview.html && open /tmp/rst-preview.html
+":nnoremap <C-p><C-r> :Rst<CR>
+:command Rst2pdf :!rst2pdf-preview.sh %
+":nnoremap <C-p><C-p> :Rst2pdf<CR>
+
+
+:command Dot :!dot.sh '%' png
+":nnoremap <C-p><C-d> :Dot<CR>
+
+
+" Quick save
+:nnoremap <C-s> :wa<CR>
+
+set t_Co=256
+
+
+:command Rtw :%s/\s\+$//e
+
+if !hasmapto(':CommandT<CR>')
+  silent! nmap <unique> <silent> <Leader>f :CommandT<CR>
+endif
