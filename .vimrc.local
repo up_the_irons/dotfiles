@@ -1,3 +1,5 @@
+set runtimepath+=~/.vim.local
+
 let mapleader=","
 
 :se ai
@@ -9,11 +11,13 @@ let mapleader=","
 
 :colorscheme garry
 
+" Better searching
 set incsearch
 set showmatch
 set hlsearch
 nnoremap <leader><space> :noh<cr>
 
+" Quick tabs
 :nnoremap <C-l> gt
 :nnoremap <C-h> gT
 
