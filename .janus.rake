@@ -1,1 +1,1 @@
-vim_plugin_task "CSApprox", "https://github.com/vim-scripts/CSApprox.git"
+vim_plugin_task "CSApprox", "git://github.com/vim-scripts/CSApprox.git"
