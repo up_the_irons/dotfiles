@@ -40,6 +40,12 @@ set t_Co=256
 
 :command Rtw :%s/\s\+$//e
 
+" <Leader>t is used by the AlignMaps plugin quite a bit, so I changed
+" this to <Leader>f.  Also, this fixes the large delay when invoking
+" CommandT.
 if !hasmapto(':CommandT<CR>')
   silent! nmap <unique> <silent> <Leader>f :CommandT<CR>
 endif
+
+" Janus overwrites the default behavior of this binding; put it back
+:cunmap <C-P>
