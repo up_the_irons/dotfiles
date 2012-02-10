@@ -13,7 +13,8 @@
 
 (setq org-log-done t)
 
-(setq org-agenda-files (list "~/Shared/Org/gtd.org"))
+(setq org-agenda-files (list "~/Shared/Org/gtd.org"
+                             "~/Shared/Org/onelogin.org"))
 
 ;; flyspell mode for spell checking everywhere
 (add-hook 'org-mode-hook 'turn-on-flyspell 'append)
