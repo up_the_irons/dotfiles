@@ -20,6 +20,10 @@
 (setq org-agenda-custom-commands
       '(("f" occur-tree "FIXME")))
 
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)"))))
+;;              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE"))))
+
 ;; Org mode key bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
 (global-set-key (kbd "<f11>") 'org-clock-goto)
