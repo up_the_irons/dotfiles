@@ -18,7 +18,8 @@
                              "~/Shared/Org/onelogin.org"))
 
 (setq org-agenda-custom-commands
-      '(("f" occur-tree "FIXME")))
+      '(("f" occur-tree "FIXME")
+        ("n" occur-tree "NEXT")))
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)"))))
