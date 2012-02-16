@@ -13,11 +13,16 @@
 
 (setq org-log-done t)
 
-(setq org-agenda-files (list "~/Shared/Org/gtd.org"
+(setq org-agenda-files (list "~/Shared/Org/arp.org"
+                             "~/Shared/Org/personal.org"
                              "~/Shared/Org/onelogin.org"))
 
 (setq org-agenda-custom-commands
       '(("f" occur-tree "FIXME")))
+
+;; Org mode key bindings
+(global-set-key (kbd "<f12>") 'org-agenda)
+(global-set-key (kbd "<f11>") 'org-clock-goto)
 
 ;; flyspell mode for spell checking everywhere
 (add-hook 'org-mode-hook 'turn-on-flyspell 'append)
