@@ -50,3 +50,29 @@ endif
 
 " Janus overwrites the default behavior of this binding; put it back
 :cunmap <C-P>
+
+" Abbreviations (insert mode)
+"
+" TODO: Only define these when not editing code
+:ia th thank you
+:ia Ty Thank you
+:ia ty thank you
+:ia th thanks
+:ia Th Thanks
+:ia lmk let me know
+:ia Lmk Let me know
+:ia bc because
+:ia Bc Because
+:ia rfc RFC
+:ia wu what's up?
+:ia w with
+:ia wo without
+:ia u you
+:ia np no problem
+:ia Np No problem
+:ia ok OK
+:ia i I
+:ia vps VPS
+:ia uuid UUID
+:ia vpn VPN
+:ia pa Please advise
