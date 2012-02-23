@@ -3,6 +3,7 @@
 (load-file "~/.emacs.d/color-theme-zenburn.el")
 (color-theme-zenburn)
 
+;; Use Org mode
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 
@@ -11,8 +12,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-(setq org-log-done t)
-
+;; Org mode agenda files
 (setq org-agenda-files (list "~/Shared/Org/arp.org"
                              "~/Shared/Org/personal.org"
                              "~/Shared/Org/onelogin.org"))
@@ -28,6 +28,11 @@
 ;; Org mode key bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
 (global-set-key (kbd "<f11>") 'org-clock-goto)
+
+;; Org mode preferences
+(setq org-log-done t)
+(setq org-agenda-start-with-follow-mode t)
+(setq org-agenda-start-with-clockreport-mode t)
 
 ;; flyspell mode for spell checking everywhere
 (add-hook 'org-mode-hook 'turn-on-flyspell 'append)
