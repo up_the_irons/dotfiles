@@ -1,7 +1,11 @@
+;; Colors
 (require 'color-theme)
 
 (load-file "~/.emacs.d/color-theme-zenburn.el")
 (color-theme-zenburn)
+
+;; Preferences
+(global-set-key (kbd "C-w") 'backward-kill-word)
 
 ;; Use Org mode
 (require 'org-install)
