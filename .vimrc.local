@@ -27,7 +27,7 @@ nnoremap <leader><space> :noh<cr>
 :command Rst :!rst2html.py % > /tmp/rst-preview.html && open /tmp/rst-preview.html
 :nnoremap <C-p><C-r> :Rst<CR>
 :command Rst2pdf :!rst2pdf-preview.sh %
-:nnoremap <C-p><C-p> :Rst2pdf<CR>
+":nnoremap <C-p><C-p> :Rst2pdf<CR>
 
 " dot tools
 :command Dot :!dot.sh '%' png
