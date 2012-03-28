@@ -33,6 +33,12 @@
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)"))))
 ;;              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE"))))
 
+;; Custom TODO keyword faces
+(setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "#e0cf9f" :background "skyblue4" :weight bold)
+              ("NEXT" :foreground "yellow" :weight bold)
+              ("DONE" :foreground "#afd8af" :weight bold))))
+
 ;; Org mode key bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
 (global-set-key (kbd "<f11>") 'org-clock-goto)
