@@ -10,6 +10,8 @@
 
 ;; My preferred key bindings
 (global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "C-s") 'save-buffer)
+(global-set-key (kbd "C-x C-s") 'isearch-forward)
 
 ;; Use Org mode
 (require 'org-install)
