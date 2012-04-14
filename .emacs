@@ -27,9 +27,22 @@
                              "~/Shared/Org/personal.org"
                              "~/Shared/Org/onelogin.org"))
 
+;; (setq org-agenda-compact-blocks t)
+
 (setq org-agenda-custom-commands
       '(("f" occur-tree "FIXME")
-        ("n" occur-tree "NEXT")))
+        ("n" occur-tree "NEXT")
+        (" " "Agenda"
+         ((agenda "" nil)
+          (tags-todo "/!NEXT"
+                     ((org-agenda-overriding-header "Next Tasks")
+                      (org-agenda-todo-ignore-scheduled t)
+                      (org-agenda-todo-ignore-deadlines t)
+                      (org-agenda-todo-ignore-with-date t)
+                      (org-tags-match-list-sublevels t)
+                      (org-agenda-sorting-strategy
+                        '(todo-state-down effort-up category-keep))))
+          nil))))
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)"))))
@@ -40,6 +53,11 @@
       (quote (("TODO" :foreground "#e0cf9f" :background "skyblue4" :weight bold)
               ("NEXT" :foreground "yellow" :weight bold)
               ("DONE" :foreground "#afd8af" :weight bold))))
+
+; Set default column view headings: Task Effort Clock_Summary
+(setq org-columns-default-format "%60ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
+; global Effort estimate values
+(setq org-global-properties (quote (("Effort_ALL" . "1 2 3 4"))))
 
 ;; Org mode key bindings
 (global-set-key (kbd "<f12>") 'org-agenda)
