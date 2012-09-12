@@ -24,8 +24,7 @@
 
 ;; Org mode agenda files
 (setq org-agenda-files (list "~/Shared/Org/arp.org"
-                             "~/Shared/Org/personal.org"
-                             "~/Shared/Org/onelogin.org"))
+                             "~/Shared/Org/personal.org"))
 
 ;; (setq org-agenda-compact-blocks t)
 
