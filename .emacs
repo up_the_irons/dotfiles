@@ -44,14 +44,23 @@
           nil))))
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)"))))
-;;              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE"))))
+      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE"))))
+(setq org-todo-state-tags-triggers
+      (quote (("CANCELLED" ("CANCELLED" . t))
+              ("WAITING" ("WAITING" . t))
+              ("HOLD" ("WAITING" . t) ("HOLD" . t))
+              (done ("WAITING") ("HOLD"))
+              ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
+              ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
+              ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
 
 ;; Custom TODO keyword faces
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "#e0cf9f" :background "skyblue4" :weight bold)
               ("NEXT" :foreground "yellow" :weight bold)
-              ("DONE" :foreground "#afd8af" :weight bold))))
+              ("DONE" :foreground "#afd8af" :weight bold)
+              ("CANCELLED" :foreground "#82a782" :weight bold))))
 
 ; Set default column view headings: Task Effort Clock_Summary
 (setq org-columns-default-format "%60ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
