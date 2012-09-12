@@ -45,22 +45,22 @@
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
-              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE"))))
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELED(c@/!)" "PHONE"))))
 (setq org-todo-state-tags-triggers
-      (quote (("CANCELLED" ("CANCELLED" . t))
+      (quote (("CANCELED" ("CANCELED" . t))
               ("WAITING" ("WAITING" . t))
               ("HOLD" ("WAITING" . t) ("HOLD" . t))
               (done ("WAITING") ("HOLD"))
-              ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
-              ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
-              ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
+              ("TODO" ("WAITING") ("CANCELED") ("HOLD"))
+              ("NEXT" ("WAITING") ("CANCELED") ("HOLD"))
+              ("DONE" ("WAITING") ("CANCELED") ("HOLD")))))
 
 ;; Custom TODO keyword faces
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "#e0cf9f" :background "skyblue4" :weight bold)
               ("NEXT" :foreground "yellow" :weight bold)
               ("DONE" :foreground "#afd8af" :weight bold)
-              ("CANCELLED" :foreground "#82a782" :weight bold)
+              ("CANCELED" :foreground "#82a782" :weight bold)
               ("WAITING" :foreground "#e59c92" :weight bold)
               ("HOLD" :foreground "#c1bfb9" :weight bold))))
 
