@@ -60,7 +60,14 @@
       (quote (("TODO" :foreground "#e0cf9f" :background "skyblue4" :weight bold)
               ("NEXT" :foreground "yellow" :weight bold)
               ("DONE" :foreground "#afd8af" :weight bold)
-              ("CANCELLED" :foreground "#82a782" :weight bold))))
+              ("CANCELLED" :foreground "#82a782" :weight bold)
+              ("WAITING" :foreground "#e59c92" :weight bold)
+              ("HOLD" :foreground "#c1bfb9" :weight bold))))
+
+;; #ef7171 is a nice red, even slightly pink, that stands out, but not too much
+;; #f9b2a9 same, but stands out less
+;; #a4ef71 is a nice green that stands out, but not too much
+;; #c0ffee ain't bad either
 
 ; Set default column view headings: Task Effort Clock_Summary
 (setq org-columns-default-format "%60ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
