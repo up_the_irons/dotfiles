@@ -32,7 +32,15 @@
       '(("f" occur-tree "FIXME")
         ("n" occur-tree "NEXT")
         (" " "Agenda"
-         ((agenda "" nil)
+         (
+          (tags-todo "/!CODE3"
+                     ((org-agenda-overriding-header "Immediate Tasks")
+                      (org-agenda-todo-ignore-scheduled t)
+                      (org-agenda-todo-ignore-deadlines t)
+                      (org-agenda-todo-ignore-with-date t)
+                      (org-tags-match-list-sublevels t)
+                      (org-agenda-sorting-strategy
+                        '(todo-state-down effort-up category-keep))))
           (tags-todo "/!NEXT"
                      ((org-agenda-overriding-header "Next Tasks")
                       (org-agenda-todo-ignore-scheduled t)
@@ -41,10 +49,11 @@
                       (org-tags-match-list-sublevels t)
                       (org-agenda-sorting-strategy
                         '(todo-state-down effort-up category-keep))))
+          (agenda "" nil)
           nil))))
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
+      (quote ((sequence "TODO(t)" "NEXT(n)" "CODE3(3)" "|" "DONE(d!/!)")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELED(c@/!)" "PHONE"))))
 (setq org-todo-state-tags-triggers
       (quote (("CANCELED" ("CANCELED" . t))
@@ -53,12 +62,14 @@
               (done ("WAITING") ("HOLD"))
               ("TODO" ("WAITING") ("CANCELED") ("HOLD"))
               ("NEXT" ("WAITING") ("CANCELED") ("HOLD"))
+              ("CODE3" ("WAITING") ("CANCELED") ("HOLD"))
               ("DONE" ("WAITING") ("CANCELED") ("HOLD")))))
 
 ;; Custom TODO keyword faces
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "#e0cf9f" :background "skyblue4" :weight bold)
               ("NEXT" :foreground "yellow" :weight bold)
+              ("CODE3" :foreground "#ff0404" :background "#3d0a17" :weight bold)
               ("DONE" :foreground "#afd8af" :weight bold)
               ("CANCELED" :foreground "#82a782" :weight bold)
               ("WAITING" :foreground "#e59c92" :weight bold)
@@ -68,6 +79,7 @@
 ;; #f9b2a9 same, but stands out less
 ;; #a4ef71 is a nice green that stands out, but not too much
 ;; #c0ffee ain't bad either
+;; #1d196a is a dark blue we used initially for CODE3 background; #070e6b is darker blue
 
 ; Set default column view headings: Task Effort Clock_Summary
 (setq org-columns-default-format "%60ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM")
