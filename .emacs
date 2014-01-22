@@ -93,8 +93,9 @@
 ;; Org mode preferences
 (setq org-log-done t)
 ;; (setq org-agenda-start-with-follow-mode t)
-(setq org-agenda-start-with-clockreport-mode t)
+(setq org-agenda-start-with-clockreport-mode nil)
 (setq org-deadline-warning-days 7)
+(setq org-agenda-ndays 1)
 
 ;; flyspell mode for spell checking everywhere
 (add-hook 'org-mode-hook 'turn-on-flyspell 'append)
