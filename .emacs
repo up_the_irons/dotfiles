@@ -100,6 +100,8 @@
 (setq org-deadline-warning-days 7)
 (setq org-agenda-ndays 1)
 
+(setq org-clock-modeline-total 'current)
+
 ;; flyspell mode for spell checking everywhere
 (add-hook 'org-mode-hook 'turn-on-flyspell 'append)
 (custom-set-variables
