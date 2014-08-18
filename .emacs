@@ -121,3 +121,6 @@
 ;; Always split side-by-side
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
+
+;; Clock entries
+(setq org-clock-into-drawer t)
