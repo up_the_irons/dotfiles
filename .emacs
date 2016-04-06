@@ -36,6 +36,14 @@
         ("n" occur-tree "NEXT")
         (" " "Agenda"
          (
+          (tags-todo "/!BLOCKED"
+                     ((org-agenda-overriding-header "Blocked Tasks")
+                      (org-agenda-todo-ignore-scheduled t)
+                      (org-agenda-todo-ignore-deadlines t)
+                      (org-agenda-todo-ignore-with-date t)
+                      (org-tags-match-list-sublevels t)
+                      (org-agenda-sorting-strategy
+                        '(todo-state-down effort-up category-keep))))
           (tags-todo "/!CODE3"
                      ((org-agenda-overriding-header "Immediate Tasks")
                       (org-agenda-todo-ignore-scheduled t)
@@ -56,7 +64,8 @@
           nil))))
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "CODE3(3)" "|" "DONE(d!/!)")
+      (quote ((sequence "TODO(t)" "NEXT(n)" "CODE3(3)" "BLOCKED(b@/!)" "|" "DONE(d!/!)")
+              (sequence "DELG(l)" "|" "DONE(d!/!)")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELED(c@/!)" "PHONE"))))
 (setq org-todo-state-tags-triggers
       (quote (("CANCELED" ("CANCELED" . t))
@@ -66,6 +75,8 @@
               ("TODO" ("WAITING") ("CANCELED") ("HOLD"))
               ("NEXT" ("WAITING") ("CANCELED") ("HOLD"))
               ("CODE3" ("WAITING") ("CANCELED") ("HOLD"))
+              ("BLOCKED" ("WAITING") ("CANCELED") ("HOLD"))
+              ("DELG" ("WAITING") ("CANCELED") ("HOLD"))
               ("DONE" ("WAITING") ("CANCELED") ("HOLD")))))
 
 ;; Custom TODO keyword faces
@@ -73,6 +84,8 @@
       (quote (("TODO" :foreground "#e0cf9f" :background "skyblue4" :weight bold)
               ("NEXT" :foreground "yellow" :weight bold)
               ("CODE3" :foreground "#ff0404" :background "#3d0a17" :weight bold)
+              ("BLOCKED" :foreground "#c0ffee" :background "#1d196a" :weight bold)
+              ("DELG" :foreground "#f9b2a9" :background "#1d196a" :weight bold)
               ("DONE" :foreground "#afd8af" :weight bold)
               ("CANCELED" :foreground "#82a782" :weight bold)
               ("WAITING" :foreground "#e59c92" :weight bold)
