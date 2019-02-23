@@ -11,7 +11,12 @@ set wrap
 
 :se pastetoggle=<F11>
 
-:colorscheme garry
+":colorscheme garry
+":colorscheme base16-shapeshifter
+":colorscheme xoria-256
+":colorscheme 256_asu1dark
+":colorscheme blacksea
+":colorscheme bluegreen
 
 " Better searching
 set incsearch

@@ -4,6 +4,18 @@
 (load-file "~/.emacs.d/color-theme-zenburn.el")
 (color-theme-zenburn)
 
+;; Dependencies
+(load-file "~/.emacs.d/org-depend.el")
+(defun mm/org-insert-trigger ()
+  "Automatically insert chain-find-next trigger when entry becomes NEXT"
+  (cond ((equal org-state "NEXT")
+         (unless org-depend-doing-chain-find-next
+           (org-set-property "TRIGGER" "chain-find-next(NEXT,from-current,priority-up,effort-down)")))
+        ((not (member org-state org-done-keywords))
+         (org-delete-property "TRIGGER"))))
+
+(add-hook 'org-after-todo-state-change-hook 'mm/org-insert-trigger)
+
 ;; Preferences
 (if window-system
   (tool-bar-mode -1))
@@ -26,8 +38,18 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;; Org mode agenda files
-(setq org-agenda-files (list "~/Shared/Org/arp.org"
-                             "~/Shared/Org/personal.org"))
+
+;; The old set
+;;(setq org-agenda-files (list "~/Shared/Org/arp.org"
+;;                             "~/Shared/Org/personal.org"))
+
+(setq org-agenda-files (list "~/Syncthing-Android/Orgzly/ARP Networks.org"
+                             "~/Syncthing-Android/Orgzly/Daily.org"
+                             "~/Syncthing-Android/Orgzly/Dating.org"
+                             "~/Syncthing-Android/Orgzly/Home.org"
+                             "~/Syncthing-Android/Orgzly/Personal.org"
+                             "~/Syncthing-Android/Orgzly/Reading.org"
+                             "~/Syncthing-Android/Orgzly/Writing.org"))
 
 ;; (setq org-agenda-compact-blocks t)
 
