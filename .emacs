@@ -47,6 +47,7 @@
                              "~/Syncthing-Android/Orgzly/Daily.org"
                              "~/Syncthing-Android/Orgzly/Dating.org"
                              "~/Syncthing-Android/Orgzly/Home.org"
+                             "~/Syncthing-Android/Orgzly/McKinsey.org"
                              "~/Syncthing-Android/Orgzly/Personal.org"
                              "~/Syncthing-Android/Orgzly/Reading.org"
                              "~/Syncthing-Android/Orgzly/Writing.org"))
