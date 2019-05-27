@@ -1,11 +1,7 @@
-;; Colors
-(require 'color-theme)
+(load-file "/usr/share/emacs/site-lisp/themes/zenburn-theme.el")
 
-(load-file "~/.emacs.d/color-theme-zenburn.el")
-(color-theme-zenburn)
-
-;; Dependencies
-(load-file "~/.emacs.d/org-depend.el")
+; ;; Dependencies
+; (load-file "~/.emacs.d/org-depend.el")
 (defun mm/org-insert-trigger ()
   "Automatically insert chain-find-next trigger when entry becomes NEXT"
   (cond ((equal org-state "NEXT")
@@ -28,29 +24,29 @@
 (global-set-key (kbd "C-s") 'save-buffer)
 (global-set-key (kbd "C-x C-s") 'isearch-forward)
 
-;; Use Org mode
-(require 'org-install)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-
+; ;; Use Org mode
+; (require 'org-install)
+; (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+; 
+; (global-set-key "\C-cl" 'org-store-link)
+; (global-set-key "\C-cc" 'org-capture)
+; (global-set-key "\C-ca" 'org-agenda)
+; (global-set-key "\C-cb" 'org-iswitchb)
+; 
 ;; Org mode agenda files
 
 ;; The old set
 ;;(setq org-agenda-files (list "~/Shared/Org/arp.org"
 ;;                             "~/Shared/Org/personal.org"))
 
-(setq org-agenda-files (list "~/Syncthing-Android/Orgzly/ARP Networks.org"
-                             "~/Syncthing-Android/Orgzly/Daily.org"
-                             "~/Syncthing-Android/Orgzly/Dating.org"
-                             "~/Syncthing-Android/Orgzly/Home.org"
-                             "~/Syncthing-Android/Orgzly/McKinsey.org"
-                             "~/Syncthing-Android/Orgzly/Personal.org"
-                             "~/Syncthing-Android/Orgzly/Reading.org"
-                             "~/Syncthing-Android/Orgzly/Writing.org"))
+(setq org-agenda-files (list "~/Orgzly/ARP Networks.org"
+                             "~/Orgzly/Daily.org"
+                             "~/Orgzly/Dating.org"
+                             "~/Orgzly/Home.org"
+                             "~/Orgzly/McKinsey.org"
+                             "~/Orgzly/Personal.org"
+                             "~/Orgzly/Reading.org"
+                             "~/Orgzly/Writing.org"))
 
 ;; (setq org-agenda-compact-blocks t)
 
@@ -147,12 +143,6 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(tool-bar-mode nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :slant normal :weight normal :height 120 :width normal)))))
 
 ;; Always split side-by-side
 (setq split-height-threshold nil)
@@ -160,3 +150,20 @@
 
 ;; Clock entries
 (setq org-clock-into-drawer t)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (wombat)))
+ '(tool-bar-mode nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Roboto Mono for Powerline" :foundry "pyrs" :slant normal :weight normal :height 181 :width normal)))))
+
+;;(custom-set-faces
+;; '(default ((t (:family "Ubuntu Mono derivative Powerline" :foundry "DAMA" :slant normal :weight normal :height 203 :width normal)))))
