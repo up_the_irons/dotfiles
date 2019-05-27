@@ -1,5 +1,9 @@
 set runtimepath+=~/.vim.local
 
+" Directories for swp files
+set backupdir=~/.vim/
+set directory=~/.vim/
+
 let mapleader=","
 
 :se ai
@@ -8,15 +12,27 @@ let mapleader=","
 :se sw=2
 
 set wrap
+set number
+set ruler
 
 :se pastetoggle=<F11>
+:se backspace=eol,indent,start
 
-":colorscheme garry
-":colorscheme base16-shapeshifter
-":colorscheme xoria-256
-":colorscheme 256_asu1dark
-":colorscheme blacksea
-":colorscheme bluegreen
+" Whitespace stuff
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set list listchars=tab:\ \ ,trail:·
+
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+syntax on
 
 " Better searching
 set incsearch
@@ -28,21 +44,10 @@ nnoremap <leader><space> :noh<cr>
 :nnoremap <C-l> gt
 :nnoremap <C-h> gT
 
-" rST tools
-:command Rst :!rst2html.py % > /tmp/rst-preview.html && open /tmp/rst-preview.html
-:nnoremap <C-p><C-r> :Rst<CR>
-:command Rst2pdf :!rst2pdf-preview.sh %
-":nnoremap <C-p><C-p> :Rst2pdf<CR>
-
-" dot tools
-:command Dot :!dot.sh '%' png
-:nnoremap <C-p><C-d> :Dot<CR>
-
 " Quick save
 :nnoremap <C-s> :wa<CR>
 
 set t_Co=256
-
 
 :command Rtw :%s/\s\+$//e
 
@@ -52,9 +57,6 @@ set t_Co=256
 if !hasmapto(':CommandT<CR>')
   silent! nmap <unique> <silent> <Leader>f :CommandT<CR>
 endif
-
-" Janus overwrites the default behavior of this binding; put it back
-:cunmap <C-P>
 
 " Abbreviations (insert mode)
 "
@@ -89,4 +91,22 @@ endif
 set runtimepath+=~/src/go/misc/vim
 au BufRead,BufNewFile *.go set filetype=go
 
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
+" add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
+au BufRead,BufNewFile *.rst set filetype=rst
+
+" Tweaks after I installed amix vimrc
+" -----------------------------------
+
+set noshowmode
+
+set cmdheight=1
+
+" " -------------
+" :cunmap <c-p>
+" :unmap <c-f>
+" :unmap <c-b>
