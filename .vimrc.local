@@ -106,6 +106,14 @@ set noshowmode
 
 set cmdheight=1
 
+" fzf
+let g:fzf_command_prefix='Fzf'
+let g:fzf_buffers_jump=1
+nnoremap <silent> <leader>o :FzfFiles<CR>
+nnoremap <silent> <leader>b :FzfBuffers<CR>
+
+
+
 " " -------------
 " :cunmap <c-p>
 " :unmap <c-f>
