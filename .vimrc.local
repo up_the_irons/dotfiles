@@ -106,6 +106,13 @@ set noshowmode
 
 set cmdheight=1
 
+# NERDTree and Webdev Icons
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+webdevicons#hardRefresh()
+
 " " -------------
 " :cunmap <c-p>
 " :unmap <c-f>
