@@ -1,6 +1,6 @@
 set runtimepath+=~/.vim_runtime
 
-# NERDTree and Webdev Icons
+" NERDTree and Webdev Icons
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
