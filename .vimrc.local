@@ -117,9 +117,6 @@ nnoremap <silent> <leader>b :FzfBuffers<CR>
 nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 
-" vim-tmux-navigator
-source ~/.vim_runtime/my_plugins/vim-tmux-navigator/plugin/tmux_navigator.vim
-
 " " -------------
 " :cunmap <c-p>
 " :unmap <c-f>
