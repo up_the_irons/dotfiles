@@ -125,6 +125,7 @@
 # debugging).  You can enter more than one driver as a colon-separated
 # list.  The first working driver will be used.
 #SoundDriver = JACK:ALSA:OSS
+SoundDriver = PulseAudio
 
 # Jack output settings.
 #JackClientName = "moc"

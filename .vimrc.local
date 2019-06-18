@@ -18,6 +18,8 @@ set ruler
 :se pastetoggle=<F11>
 :se backspace=eol,indent,start
 
+set textwidth=72
+
 " Whitespace stuff
 set nowrap
 set tabstop=2
