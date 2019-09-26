@@ -167,3 +167,5 @@
 
 ;;(custom-set-faces
 ;; '(default ((t (:family "Ubuntu Mono derivative Powerline" :foundry "DAMA" :slant normal :weight normal :height 203 :width normal)))))
+
+(setq-default fill-column 72)
