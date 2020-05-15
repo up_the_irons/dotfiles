@@ -1,3 +1,5 @@
+set t_Co=256
+
 set runtimepath+=~/.vim.local
 
 " Directories for swp files
@@ -12,6 +14,8 @@ let mapleader=","
 :se sw=2
 
 set wrap
+set showbreak=…
+set linebreak
 set number
 set ruler
 
@@ -21,7 +25,6 @@ set ruler
 set textwidth=72
 
 " Whitespace stuff
-set nowrap
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -48,8 +51,6 @@ nnoremap <leader><space> :noh<cr>
 
 " Quick save
 :nnoremap <C-s> :wa<CR>
-
-set t_Co=256
 
 :command Rtw :%s/\s\+$//e
 
@@ -108,11 +109,40 @@ set noshowmode
 
 set cmdheight=1
 
+colorscheme badwolf
+
+set updatetime=500
+
+nnoremap <silent> <leader><leader>b :BufExplorer<CR>
+
 " fzf
 let g:fzf_command_prefix='Fzf'
 let g:fzf_buffers_jump=1
 nnoremap <silent> <leader>o :FzfFiles<CR>
 nnoremap <silent> <leader>b :FzfBuffers<CR>
+
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Enable per-command history
+" - History files will be stored in the specified directory
+" - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
+"   'previous-history' instead of 'down' and 'up'.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " Comfortable motion
 :unmap <c-b>
@@ -123,3 +153,71 @@ nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
 " :cunmap <c-p>
 " :unmap <c-f>
 " :unmap <c-b>
+
+" Use pencile colorscheme when going into Goyo mode
+function! s:goyo_enter()
+    colorscheme pencil
+endfunction
+
+function! s:goyo_leave()
+    colorscheme badwolf
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" --------------
+" vim-easymotion
+" --------------
+" <Leader>f{char} to move to {char}
+map  <Leader><Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader><Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
+
+let g:EasyMotion_smartcase = 1
+" ------------------
+" END vim-easymotion
+" ------------------
+
+" sneak
+let g:sneak#label = 1
+
+" GitGutter
+let g:gitgutter_enabled = 1
+noremap <leader><leader>ggp :GitGutterPreviewHunk<CR>
+
+
+" Autoformat
+noremap <leader><leader>a :Autoformat<CR>
+
+" Screw ale, nothing is enabled by default.  Even with the stuff below,
+" it doesn't want to format my .js files.  Autoformat, on the other
+" hand, works great out-of-the-box
+"
+"" ale
+""
+"" Bind F8 to fixing problems with ALE
+"nmap <F8> <Plug>(ale_fix)
+
+"let g:ale_linters = {
+"\   'javascript': ['standard'],
+"\}
+"let g:ale_fixers = {
+"\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+"\   'javascript': ['standard'],
+"\   'yaml': ['prettier'],
+"\}
+
+"let g:ale_lint_on_save = 1
+"let g:ale_fix_on_save = 1
+"" END: ale
