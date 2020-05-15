@@ -194,8 +194,6 @@ let g:sneak#label = 1
 
 " GitGutter
 let g:gitgutter_enabled = 1
-noremap <leader><leader>ggp :GitGutterPreviewHunk<CR>
-
 
 " Autoformat
 noremap <leader><leader>a :Autoformat<CR>
