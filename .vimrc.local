@@ -7,6 +7,7 @@ set backupdir=~/.vim/
 set directory=~/.vim/
 
 let mapleader=","
+:set timeoutlen=1500
 
 :se ai
 :se expandtab
@@ -189,14 +190,13 @@ let g:EasyMotion_smartcase = 1
 " END vim-easymotion
 " ------------------
 
-" sneak
-let g:sneak#label = 1
-
 " GitGutter
 let g:gitgutter_enabled = 1
+nnoremap <silent> <leader>x :GitGutterNextHunk<CR>:GitGutterPreviewHunk<CR>
+nnoremap <silent> <leader><leader>x :GitGutterStageHunk<CR>:GitGutterNextHunk<CR>:GitGutterPreviewHunk<CR>
 
 " Autoformat
-noremap <leader><leader>a :Autoformat<CR>
+noremap <leader>a :Autoformat<CR>
 
 " Screw ale, nothing is enabled by default.  Even with the stuff below,
 " it doesn't want to format my .js files.  Autoformat, on the other
