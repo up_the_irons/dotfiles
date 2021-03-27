@@ -47,8 +47,8 @@ set hlsearch
 nnoremap <leader><space> :noh<cr>
 
 " Quick tabs
-:nnoremap <C-l> gt
-:nnoremap <C-h> gT
+:nnoremap <C-]> gt
+" :nnoremap <C-h> gT
 
 " Quick save
 :nnoremap <C-s> :wa<CR>
@@ -84,7 +84,7 @@ endif
 :ia ok OK
 :ia i I
 :ia vps VPS
-:ia uuid UUID
+":ia uuid UUID
 :ia vpn VPN
 :ia pa Please advise
 
@@ -121,6 +121,7 @@ let g:fzf_command_prefix='Fzf'
 let g:fzf_buffers_jump=1
 nnoremap <silent> <leader>o :FzfFiles<CR>
 nnoremap <silent> <leader>b :FzfBuffers<CR>
+nnoremap <silent> <leader>r :FzfRg<CR>
 
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
@@ -143,7 +144,7 @@ let g:fzf_colors =
 " - History files will be stored in the specified directory
 " - When set, CTRL-N and CTRL-P will be bound to 'next-history' and
 "   'previous-history' instead of 'down' and 'up'.
-let g:fzf_history_dir = '~/.local/share/fzf-history'
+" let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " Comfortable motion
 :unmap <c-b>
@@ -198,7 +199,13 @@ nnoremap <silent> <leader><leader>x :GitGutterStageHunk<CR>:GitGutterNextHunk<CR
 " Autoformat
 noremap <leader>a :Autoformat<CR>
 
-" Screw ale, nothing is enabled by default.  Even with the stuff below,
+" SnipMate
+" 
+" use the new parser
+let g:snipMate = { 'snippet_version' : 1  }
+let g:snipMate.description_in_completion = 1
+
+"Screw ale, nothing is enabled by default.  Even with the stuff below,
 " it doesn't want to format my .js files.  Autoformat, on the other
 " hand, works great out-of-the-box
 "
