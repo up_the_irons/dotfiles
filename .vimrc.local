@@ -110,7 +110,15 @@ set noshowmode
 
 set cmdheight=1
 
+packadd! dracula
+
 colorscheme badwolf
+colorscheme gruvbox
+" gruvbox is also very interesting to me now...  zenburn as well
+" mayansmoke is neat for white background
+" peaksea even better for white background, as is pencil
+" pablo is like my old BBS
+" slate is kinda interesting
 
 set updatetime=500
 
