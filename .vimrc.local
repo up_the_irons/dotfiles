@@ -119,6 +119,9 @@ colorscheme gruvbox
 " peaksea even better for white background, as is pencil
 " pablo is like my old BBS
 " slate is kinda interesting
+" jellybeans has a good palette of many colors
+" tender is calming, easy to see begin/end surrounds
+" 256-atom-dark is good alternative, but no bold (that I saw)
 
 set updatetime=500
 
