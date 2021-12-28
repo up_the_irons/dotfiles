@@ -114,7 +114,7 @@ packadd! dracula
 
 colorscheme badwolf
 colorscheme gruvbox
-" gruvbox is also very interesting to me now...  zenburn as well
+" gruvbox is also very interesting to me now...  zenburn as well (easy to see cursor in searches)
 " mayansmoke is neat for white background
 " peaksea even better for white background, as is pencil
 " pablo is like my old BBS
