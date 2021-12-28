@@ -1,0 +1,8 @@
+[Scheme]
+Name=Jelly Subtle
+ColorForeground=#ffffff
+ColorBackground=#000000
+TabActivityColor=#E6DB74
+ColorPalette=#000000;#FF0000;#00CD00;#F9F06B;#5C5CFF;#CD00CD;#00CDCD;#E5E5E5;#7f7f7f;#Fe4444;#00FF00;#F9F06B;#5C5CFF;#FF00FF;#00FFFF;#FFFFFF;
+ColorBold=#5C9EED
+ColorBoldUseDefault=FALSE
