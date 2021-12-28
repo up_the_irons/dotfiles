@@ -112,6 +112,8 @@ set cmdheight=1
 
 packadd! dracula
 
+let g:gruvbox_contrast_dark = 'medium' 
+
 colorscheme badwolf
 colorscheme gruvbox
 " gruvbox is also very interesting to me now...  zenburn as well (easy to see cursor in searches)
