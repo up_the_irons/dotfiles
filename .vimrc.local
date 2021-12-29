@@ -91,6 +91,8 @@ endif
 " Spell check
 :command Spell :setlocal spell spelllang=en_us
 
+source ~/.vimrc.local-macros
+
 " Go
 set runtimepath+=~/src/go/misc/vim
 au BufRead,BufNewFile *.go set filetype=go
