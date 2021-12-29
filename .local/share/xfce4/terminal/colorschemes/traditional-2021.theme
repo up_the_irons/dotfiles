@@ -1,0 +1,8 @@
+[Scheme]
+Name=Traditional (2021)
+ColorForeground=#ffffff
+ColorBackground=#000000
+TabActivityColor=#AA0000
+ColorPalette=rgb(0,0,0);rgb(170,0,0);rgb(0,170,0);rgb(250,216,133);rgb(105,105,240);rgb(170,0,170);rgb(0,170,170);rgb(170,170,170);rgb(85,85,85);rgb(255,85,85);rgb(85,255,85);rgb(255,255,85);rgb(85,85,255);rgb(255,85,255);rgb(85,255,255);rgb(255,255,255)
+ColorBold=#72729f9fcfcf
+ColorBoldUseDefault=FALSE
