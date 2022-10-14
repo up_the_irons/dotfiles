@@ -87,6 +87,7 @@ endif
 ":ia uuid UUID
 :ia vpn VPN
 :ia pa Please advise
+:ia todo TODO
 
 " Spell check
 :command Spell :setlocal spell spelllang=en_us
@@ -161,8 +162,8 @@ let g:fzf_colors =
 "   'previous-history' instead of 'down' and 'up'.
 " let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-let $FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git -o -name tmp -type d \) -prune -o -print'
-" let $FZF_DEFAULT_COMMAND='git ls-files'
+" let $FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git -o -name tmp -type d \) -prune -o -print'
+let $FZF_DEFAULT_COMMAND='git ls-files'
 "
 " Which is better?
 
