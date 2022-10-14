@@ -20,7 +20,7 @@ set linebreak
 set number
 set ruler
 
-:se pastetoggle=<F11>
+:se pastetoggle=<F12>
 :se backspace=eol,indent,start
 
 " set textwidth=72
