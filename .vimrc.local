@@ -20,7 +20,7 @@ set linebreak
 set number
 set ruler
 
-:se pastetoggle=<F11>
+:se pastetoggle=<F12>
 :se backspace=eol,indent,start
 
 " set textwidth=72
@@ -39,6 +39,7 @@ set ignorecase
 set smartcase
 
 syntax on
+autocmd BufEnter * :syntax sync fromstart
 
 " Better searching
 set incsearch
