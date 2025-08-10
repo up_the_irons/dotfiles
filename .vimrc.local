@@ -39,6 +39,7 @@ set ignorecase
 set smartcase
 
 syntax on
+autocmd BufEnter * :syntax sync fromstart
 
 " Better searching
 set incsearch
