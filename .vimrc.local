@@ -94,6 +94,9 @@ endif
 
 source ~/.vimrc.local-macros
 
+" Puppet
+au BufRead,BufNewFile *.pp set filetype=puppet
+
 " Go
 set runtimepath+=~/src/go/misc/vim
 au BufRead,BufNewFile *.go set filetype=go
