@@ -1,5 +1,14 @@
 (load-file "/usr/share/emacs/site-lisp/themes/zenburn-theme.el")
 
+;; Put backup files in ~/tmp/emacs-backups/
+(setq backup-directory-alist '(("." . "~/tmp/emacs-backups/")))
+
+;; Create the directory if it doesn't exist
+(make-directory "~/tmp/emacs-backups/" t)
+
+(setq auto-save-file-name-transforms
+      '((".*" "~/tmp/emacs-backups/" t)))
+
 ; ;; Dependencies
 ; (load-file "~/.emacs.d/org-depend.el")
 (defun mm/org-insert-trigger ()
@@ -39,14 +48,28 @@
 ;;(setq org-agenda-files (list "~/Shared/Org/arp.org"
 ;;                             "~/Shared/Org/personal.org"))
 
-(setq org-agenda-files (list "~/Orgzly/ARP Networks.org"
-                             "~/Orgzly/Daily.org"
-                             "~/Orgzly/Dating.org"
-                             "~/Orgzly/Home.org"
-                             "~/Orgzly/McKinsey.org"
-                             "~/Orgzly/Personal.org"
-                             "~/Orgzly/Reading.org"
-                             "~/Orgzly/Writing.org"))
+;; Pre-2026
+;;(setq org-agenda-files (list "~/Orgzly/ARP Networks.org"
+;;                             "~/Orgzly/Daily.org"
+;;                             "~/Orgzly/Dating.org"
+;;                             "~/Orgzly/Home.org"
+;;                             "~/Orgzly/McKinsey.org"
+;;                             "~/Orgzly/Personal.org"
+;;                             "~/Orgzly/Reading.org"
+;;                             "~/Orgzly/Writing.org"))
+
+(setq org-agenda-files (list "~/Phone/Orgzly/Global.org"))
+
+;; Set default capture file
+(setq org-default-notes-file "~/path/to/Global.org")
+
+;; Basic capture template
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/Phone/Orgzly/Global.org" "Inbox")
+         "* TODO %?")))
+
+;; Key bindings
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; (setq org-agenda-compact-blocks t)
 
